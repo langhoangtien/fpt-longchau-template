@@ -1,113 +1,135 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import MenuCategory from "@/components/menu-category/navigation";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="md:min-w-container-content lg:w-full flex flex-col min-h-screen">
+      <div className="flex items-center border border-t-gray-2 border-b-gray-2 bg-white px-3 py-2 md:hidden">
+        <div className="flex flex-1 items-center gap-2">
+          <div className="h-[28px] w-[28px] shrink-0 overflow-hidden rounded-md bg-slate-500">
+            <svg
+              width={28}
+              height={28}
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width={28} height={28} rx={6} fill="#002C9A" />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M20.2095 11.3519H20.3032C20.3649 11.3519 20.4202 11.3436 20.4202 11.2721C20.4202 11.2088 20.359 11.1989 20.3041 11.1989H20.2095V11.3519ZM20.1031 11.1231H20.3153C20.4514 11.1231 20.5261 11.1676 20.5261 11.2803C20.5261 11.3714 20.47 11.4157 20.3768 11.4237L20.5294 11.6572H20.4213L20.2739 11.4273H20.2094V11.6572H20.1031V11.1231ZM20.6779 11.3918C20.6779 11.1716 20.5076 11.0119 20.2973 11.0119C20.0867 11.0119 19.9169 11.1716 19.9169 11.3918C19.9169 11.6129 20.0867 11.7725 20.2973 11.7725C20.5076 11.7725 20.6779 11.6129 20.6779 11.3918ZM19.7937 11.3919C19.7937 11.1325 20.0196 10.9211 20.2972 10.9211C20.5746 10.9211 20.8 11.1325 20.8 11.3919C20.8 11.6522 20.5746 11.8637 20.2972 11.8637C20.0196 11.8637 19.7937 11.6522 19.7937 11.3919Z"
+                fill="white"
+              />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M9.80825 6.77504C9.05584 6.77504 8.4185 7.23326 8.19499 7.86766C8.1896 7.88167 8.18473 7.89648 8.18021 7.91049L8.14319 8.04694L7.19995 11.8744H9.57622C10.2862 11.8744 10.8907 11.4531 11.1207 10.8625L11.2103 10.4979L12.1279 6.77504H9.80825Z"
+                fill="#034EA2"
+              />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M14.2907 5.5C13.5136 5.5 12.8583 5.98916 12.6562 6.65646C12.6409 6.70645 12.6286 6.75725 12.6188 6.80903L11.0562 13.15H13.3758C14.1704 13.15 14.8375 12.6382 15.0229 11.9473V11.9476H15.024L16.6127 5.5H14.2907Z"
+                fill="#F37021"
+              />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M18.1485 6.77505C17.4227 6.77505 16.8036 7.20152 16.5603 7.80173C16.5479 7.83218 16.5047 7.95903 16.5047 7.95903L15.54 11.8744H17.86C18.6572 11.8744 19.3257 11.3602 19.5091 10.6662L19.5089 10.6665H19.5091L20.4676 6.77505H18.1485Z"
+                fill="#51B848"
+              />
+              <path
+                d="M6.72276 18.013L5.93341 16.7373L5.92657 16.74L5.94162 18.013H5.43408V15.9154H5.891L6.69267 17.234L6.69814 17.2285L6.67488 15.9154H7.18242V18.013H6.72276Z"
+                fill="white"
+              />
+              <path
+                d="M8.76797 18.013V17.1745H8.08942V18.013H7.56V15.9154H8.08942V16.7041H8.76797V15.9154H9.29739V18.013H8.76797Z"
+                fill="white"
+              />
+              <path
+                d="M11.0088 18.013L10.9076 17.71H10.188L10.0785 18.013H9.50944L10.3412 15.9154H10.7584L11.5834 18.013H11.0088ZM10.5546 16.5685H10.5464L10.333 17.2852H10.768L10.5546 16.5685ZM10.7735 15.8144L10.0813 15.5086L10.2235 15.1766L10.9021 15.5391L10.7735 15.8144Z"
+                fill="white"
+              />
+              <path
+                d="M13.4384 16.3858V18.013H12.909V16.3858H12.4999V15.9154H13.8447V16.3858H13.4384Z"
+                fill="white"
+              />
+              <path
+                d="M15.2661 18.013V17.1745H14.5876V18.013H14.0581V15.9154H14.5876V16.7041H15.2661V15.9154H15.7955V18.013H15.2661Z"
+                fill="white"
+              />
+              <path
+                d="M17.7559 17.1828C17.7559 17.3258 17.7441 17.4415 17.7203 17.5301C17.6884 17.6436 17.6314 17.7423 17.5493 17.8262C17.4025 17.9775 17.2092 18.0531 16.9693 18.0531C16.8526 18.0531 16.7449 18.036 16.6464 18.0019C16.5352 17.9632 16.444 17.9055 16.3728 17.829C16.2853 17.7358 16.2269 17.6362 16.1977 17.5301C16.185 17.4821 16.1758 17.4282 16.1704 17.3682C16.1667 17.3202 16.1649 17.2584 16.1649 17.1828V15.9154H16.6943V17.1828C16.6943 17.2382 16.6971 17.2857 16.7025 17.3253C16.7098 17.3761 16.7221 17.4189 16.7395 17.454C16.7814 17.5398 16.8562 17.5827 16.9638 17.5827C17.0751 17.5827 17.1499 17.5407 17.1882 17.4568C17.2037 17.4226 17.2146 17.3802 17.221 17.3295C17.2247 17.2926 17.2265 17.2437 17.2265 17.1828V15.9154H17.7559V17.1828Z"
+                fill="white"
+              />
+              <path
+                d="M20.2238 16.9642C20.2238 17.2723 20.1171 17.5315 19.9037 17.7418C19.6912 17.9493 19.4322 18.0531 19.1267 18.0531C18.8294 18.0531 18.5744 17.9512 18.3619 17.7473C18.1449 17.5407 18.0364 17.2884 18.0364 16.9905C18.0364 16.8318 18.0633 16.6824 18.1171 16.5422C18.1453 16.4675 18.1905 16.3891 18.2525 16.307C18.4677 16.0201 18.76 15.8767 19.1294 15.8767C19.434 15.8767 19.6921 15.9809 19.9037 16.1894C20.1171 16.3988 20.2238 16.657 20.2238 16.9642ZM19.6944 16.967C19.6944 16.7982 19.6433 16.6543 19.5412 16.5353C19.4327 16.4098 19.2963 16.3471 19.1321 16.3471C18.9662 16.3471 18.8294 16.408 18.7217 16.5297C18.6178 16.6469 18.5658 16.7899 18.5658 16.9587C18.5658 17.1312 18.6182 17.2769 18.7231 17.3959C18.8316 17.5204 18.9698 17.5827 19.1376 17.5827C19.299 17.5827 19.4336 17.5199 19.5412 17.3945C19.6433 17.2755 19.6944 17.133 19.6944 16.967ZM19.6178 15.4934L19.4865 15.2153L20.1582 14.85L20.3073 15.1849L19.6178 15.4934ZM19.2607 15.7314L19.1321 15.5681L19.0035 15.7314H18.5494L18.9858 15.261H19.2881L19.7094 15.7314H19.2607Z"
+                fill="white"
+              />
+              <path
+                d="M22.5659 17.2285C22.5057 17.4748 22.3785 17.674 22.1842 17.8262C21.9918 17.9775 21.7697 18.0531 21.518 18.0531C21.2152 18.0531 20.9575 17.948 20.745 17.7376C20.5316 17.5264 20.4249 17.2677 20.4249 16.9614C20.4249 16.6561 20.5307 16.3983 20.7423 16.188C20.953 15.9804 21.2097 15.8767 21.5125 15.8767C21.9065 15.8767 22.2107 16.0409 22.425 16.3692C22.4998 16.4827 22.5467 16.5971 22.5659 16.7124H22.0105C21.9184 16.4689 21.7515 16.3471 21.5098 16.3471C21.3465 16.3471 21.212 16.4084 21.1062 16.5311C21.005 16.6492 20.9544 16.7917 20.9544 16.9587C20.9544 17.1275 21.005 17.2718 21.1062 17.3917C21.2129 17.519 21.3483 17.5827 21.5125 17.5827C21.7387 17.5827 21.9047 17.4646 22.0105 17.2285H22.5659Z"
+                fill="white"
+              />
+              <path
+                d="M2.94995 22.4451V19.7607H3.6275V21.8431H4.4136V22.4451H2.94995Z"
+                fill="white"
+              />
+              <path
+                d="M7.36366 21.1029C7.36366 21.4972 7.2271 21.8289 6.95397 22.0981C6.68202 22.3637 6.35054 22.4965 5.95953 22.4965C5.57903 22.4965 5.2528 22.366 4.98085 22.1051C4.70306 21.8407 4.56417 21.5178 4.56417 21.1365C4.56417 20.9335 4.5986 20.7423 4.66746 20.5628C4.70364 20.4672 4.76142 20.3669 4.84079 20.2618C5.11624 19.8947 5.49033 19.7111 5.96304 19.7111C6.35287 19.7111 6.68319 19.8445 6.95397 20.1113C7.2271 20.3793 7.36366 20.7098 7.36366 21.1029ZM6.68611 21.1064C6.68611 20.8904 6.62074 20.7063 6.49002 20.554C6.35112 20.3934 6.17663 20.3131 5.96654 20.3131C5.75411 20.3131 5.57903 20.3911 5.4413 20.5469C5.30825 20.6968 5.24172 20.8798 5.24172 21.0958C5.24172 21.3166 5.30883 21.5031 5.44306 21.6554C5.58195 21.8147 5.75878 21.8944 5.97354 21.8944C6.18013 21.8944 6.35229 21.8141 6.49002 21.6536C6.62074 21.5013 6.68611 21.3189 6.68611 21.1064Z"
+                fill="white"
+              />
+              <path
+                d="M9.3788 22.4451L8.3686 20.8125L8.35985 20.816L8.37911 22.4451H7.72957V19.7607H8.31433L9.34028 21.4482L9.34728 21.4411L9.31752 19.7607H9.96706V22.4451H9.3788Z"
+                fill="white"
+              />
+              <path
+                d="M13.1605 21.0604C13.1605 21.4724 13.0262 21.8153 12.7578 22.0892C12.4882 22.3631 12.1503 22.5 11.7441 22.5C11.3519 22.5 11.0193 22.3648 10.7462 22.0945C10.4719 21.8218 10.3347 21.4877 10.3347 21.0923C10.3347 20.6956 10.4742 20.3645 10.7532 20.0989C11.0263 19.8404 11.3601 19.7111 11.7546 19.7111C12.0487 19.7111 12.3213 19.7979 12.5722 19.9714C12.8325 20.1508 13.0023 20.3804 13.0817 20.6602H12.3219C12.1935 20.4288 11.9985 20.3131 11.7371 20.3131C11.5247 20.3131 11.3496 20.3899 11.2119 20.5433C11.0788 20.6921 11.0123 20.8751 11.0123 21.0923C11.0123 21.3189 11.0771 21.5078 11.2066 21.6589C11.3432 21.8183 11.5212 21.898 11.7406 21.898C11.8935 21.898 12.0254 21.8631 12.1363 21.7935C12.2553 21.7179 12.3347 21.6087 12.3744 21.4659H11.583V20.9187H13.157C13.1581 20.94 13.1593 20.9636 13.1605 20.9896V21.0604Z"
+                fill="white"
+              />
+              <path
+                d="M17.2485 21.4411C17.1715 21.7563 17.0087 22.0113 16.7601 22.2061C16.5138 22.3997 16.2296 22.4965 15.9074 22.4965C15.5199 22.4965 15.1902 22.3619 14.9183 22.0927C14.6451 21.8224 14.5086 21.4913 14.5086 21.0994C14.5086 20.7086 14.644 20.3787 14.9147 20.1095C15.1844 19.8439 15.5129 19.7111 15.9004 19.7111C16.4047 19.7111 16.7939 19.9212 17.0682 20.3415C17.1639 20.4867 17.224 20.6331 17.2485 20.7806H16.5377C16.4198 20.469 16.2062 20.3131 15.8969 20.3131C15.688 20.3131 15.5159 20.3917 15.3805 20.5487C15.2509 20.6998 15.1861 20.8821 15.1861 21.0958C15.1861 21.3118 15.2509 21.4966 15.3805 21.6501C15.517 21.813 15.6903 21.8944 15.9004 21.8944C16.1899 21.8944 16.4023 21.7433 16.5377 21.4411H17.2485Z"
+                fill="white"
+              />
+              <path
+                d="M19.1464 22.4451V21.372H18.278V22.4451H17.6004V19.7607H18.278V20.77H19.1464V19.7607H19.8239V22.4451H19.1464Z"
+                fill="white"
+              />
+              <path
+                d="M22.0141 22.4451L21.8846 22.0573H20.9637L20.8236 22.4451H20.0953L21.1598 19.7607H21.6938L22.7495 22.4451H22.0141ZM21.4329 20.5965H21.4224L21.1493 21.5137H21.706L21.4329 20.5965ZM21.5905 19.5252L21.4259 19.3162L21.2613 19.5252H20.6801L21.2386 18.9231H21.6255L22.1647 19.5252H21.5905Z"
+                fill="white"
+              />
+              <path
+                d="M25.05 21.3827C25.05 21.5656 25.0348 21.7138 25.0045 21.8271C24.9636 21.9723 24.8907 22.0986 24.7856 22.2061C24.5977 22.3997 24.3503 22.4965 24.0433 22.4965C23.8939 22.4965 23.7562 22.4746 23.6301 22.4309C23.4877 22.3814 23.371 22.3076 23.28 22.2096C23.1679 22.0904 23.0932 21.9629 23.0559 21.8271C23.0395 21.7657 23.0278 21.6967 23.0208 21.62C23.0162 21.5586 23.0138 21.4795 23.0138 21.3827V19.7607H23.6914V21.3827C23.6914 21.4535 23.6949 21.5143 23.7019 21.5651C23.7112 21.63 23.727 21.6849 23.7492 21.7297C23.8029 21.8395 23.8986 21.8944 24.0363 21.8944C24.1787 21.8944 24.2744 21.8407 24.3234 21.7333C24.3433 21.6896 24.3573 21.6353 24.3654 21.5704C24.3701 21.5232 24.3724 21.4606 24.3724 21.3827V19.7607H25.05V21.3827Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div>
+            <p className="text-[10px] font-semibold leading-3 text-black">
+              Ứng dụng Nhà Thuốc Long Châu
+            </p>
+            <p className="text-[10px] leading-[14px] text-[#838383]">
+              Siêu ưu đãi, siêu trải nghiệm
+            </p>
+          </div>
+        </div>
+        <div className="h-[28px] rounded-[50px] py-1 px-2 text-label2 text-white bgi-button-primary-active">
+          <a href="https://dl.ntlc.com.vn/app/home">MỞ ỨNG DỤNG</a>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="sticky top-0 z-[60000]">stick</div>
+      <Header></Header>
+      <div className="bg-layer-gray pb-9 flex flex-1 justify-center relative">
+        <MenuCategory></MenuCategory>
+        <div id="overlay-menu"></div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <div className="h-[400px]">f</div>
+      <div className="h-[400px]">f</div>
+      <div className="h-[400px]">f</div>
+      <Footer></Footer>
+    </div>
   );
 }
