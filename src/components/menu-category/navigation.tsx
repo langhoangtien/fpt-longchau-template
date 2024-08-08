@@ -1,5 +1,6 @@
 "use client";
 
+import "./style.css";
 import * as React from "react";
 import Link from "next/link";
 
@@ -55,13 +56,15 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function NavigationMenuDemo() {
   return (
-    <NavigationMenu className="bg-white w-full">
+    <NavigationMenu className="bg-white w-full ">
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+        <NavigationMenuItem className="nav-item">
+          <NavigationMenuTrigger className="hover:text-blue-500">
+            Thực phẩm chức năng
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-4 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-4">
+              {/* <li className="row-span-4">
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
@@ -77,7 +80,7 @@ export default function NavigationMenuDemo() {
                     </p>
                   </a>
                 </NavigationMenuLink>
-              </li>
+              </li> */}
               <ListItem href="/docs" title="Introduction">
                 <a
                   className="category-panel-left-anchor flex py-[11px] "
@@ -205,8 +208,10 @@ export default function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+        <NavigationMenuItem className="nav-item">
+          <NavigationMenuTrigger className="hover:text-blue-500">
+            Components
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -221,7 +226,7 @@ export default function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="nav-item">
           <Link href="/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Documentation
