@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import Dialog from "./dialog";
 import Info from "./info";
+import Cart from "./cart";
 
 export default function Header() {
   useEffect(() => {}, []);
@@ -109,6 +110,7 @@ export default function Header() {
                       </div>
                       <span className="css-14c0258">Giỏ hàng</span>
                     </a>
+                    <Cart></Cart>
                   </div>
                 </div>
               </div>

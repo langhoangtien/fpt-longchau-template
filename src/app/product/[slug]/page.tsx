@@ -281,7 +281,7 @@ export default async function Product(props: any) {
                 </table>
               </div>
               <div className="mt-[8px] " />
-              <div className="omd:hidden fixed bottom-0 left-0 right-0 z-[11] w-full bg-white">
+              <div className="md:hidden fixed bottom-0 left-0 right-0 z-[11] w-full bg-white">
                 <div>
                   <div className="shadow-3xl w-full rounded-t-3xl px-4 pt-4 pb-[30px]">
                     <div className="flex gap-x-2">
@@ -382,16 +382,16 @@ export default async function Product(props: any) {
                   </div>
                 </div>
               </div>
-              <div className="z-[12] umd:hidden">
+              <div className="z-[12] hidden sm:block">
                 <div className="mt-4 flex items-center">
-                  <span className="te text-gray-7 cta-title mr-4 inline-block h-full w-full max-w-[115px]">
+                  <span className="text-base text-gray-700 cta-title mr-4 inline-block h-full w-full max-w-[115px]">
                     Chọn số lượng
                   </span>
                   <div className="cta-desktop__quantity--input-spinner inline-block items-center">
                     <div className="mx-[-4px] my-[-2px]">
-                      <div className="css-b01no7">
-                        <span disabled="" className="css-10va0le">
-                          <span className="estore-icon  css-u5y24t">
+                      <div className="product-quantity">
+                        <span disabled="" className="quantity-decrease">
+                          <span className="estore-icon  product-quantity-icon">
                             <svg
                               viewBox="0 0 24 24"
                               fill="none"
@@ -414,8 +414,8 @@ export default async function Product(props: any) {
                           className="text-center"
                           defaultValue={1}
                         />
-                        <span className="css-mm1kdl">
-                          <span className="estore-icon  css-u5y24t">
+                        <span className="quantity-increase">
+                          <span className="estore-icon  product-quantity-icon">
                             <svg
                               viewBox="0 0 24 24"
                               fill="none"
@@ -434,12 +434,12 @@ export default async function Product(props: any) {
                 </div>
                 <div className="mt-4 flex gap-4">
                   <button
-                    className="inline-flex items-center justify-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed ring-offset-background bgi-button-primary-active text-text-white active:bg-button-primary-pressed active:bgi-none py-[14px] h-[56px] rounded-[42px] text-heading2 flex-auto px-6"
+                    className="inline-flex bg-blue-500 items-center justify-center font-medium text-white  py-[14px] h-[56px] rounded-[42px] text-xl flex-auto px-6"
                     data-test="btn_choose_buy"
                   >
                     Chọn mua
                   </button>
-                  <button className="inline-flex items-center justify-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed ring-offset-background bg-button-secondary-active text-text-focus active:bg-button-secondary-pressed py-[14px] h-[56px] rounded-[42px] text-heading2 flex-auto px-6">
+                  <button className="inline-flex bg-gray-200 items-center justify-center font-medium text-blue-600  text-focus  py-[14px] h-[56px] rounded-[42px] text-xl flex-auto px-6">
                     Tìm nhà thuốc
                   </button>
                 </div>
@@ -448,7 +448,7 @@ export default async function Product(props: any) {
                 <svg
                   width={16}
                   height={16}
-                  className="mr-1.5 mt-1.5 text-yellow-7"
+                  className="mr-1.5 mt-1.5 text-yellow-500"
                   viewBox="0 0 12 12"
                   fill="current"
                   xmlns="http://www.w3.org/2000/svg"
@@ -459,10 +459,10 @@ export default async function Product(props: any) {
                   />
                 </svg>
                 <div>
-                  <span className="text-base font-semibold text-yellow-8">
+                  <span className="text-sm font-semibold text-yellow-600">
                     Sản phẩm đang được chú ý,{" "}
                   </span>
-                  <span className="text-base">
+                  <span className="text-sm">
                     có 20 người thêm vào giỏ hàng &amp; 46 người đang xem
                   </span>
                 </div>
@@ -618,7 +618,7 @@ export default async function Product(props: any) {
         <div data-lcpr="prr-id-product-detail-product-content">
           <div
             id="content-wrapper"
-            className="bg-layer-white p-4 md:rounded-xl css-13wbf7e"
+            className="bg-white p-4 md:rounded-xl css-13wbf7e"
           >
             <div className="lc-detail-content-inner relative">
               <div className="lc-col-1  css-119phdv">
