@@ -1,7 +1,7 @@
 export default function Info() {
   return (
     <div className="bg-blue-5 md:block md:bg-transparent">
-      <div className="py-2 md:px-4 omd:container-lite mx-auto">
+      <div className="py-2 md:px-4 md:container-lite mx-auto">
         <div className="flex items-center justify-end gap-4">
           <div className="flex w-full justify-between gap-4">
             <div className="flex flex-1 items-center items-start">

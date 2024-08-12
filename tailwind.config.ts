@@ -16,6 +16,7 @@ const config = {
       screens: {
         "2xl": "1400px",
       },
+      
     },
     extend: {
       colors: {
@@ -75,6 +76,7 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  
 } satisfies Config
 
 export default config

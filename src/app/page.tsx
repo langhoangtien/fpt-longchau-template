@@ -2,8 +2,34 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import MenuCategory from "@/components/menu-category/navigation";
 import Image from "next/image";
+import HomePage from "@/components/home";
+import { convertImagePathToUrl } from "@/lib/common";
+import { CarouselDemo } from "@/components/home/carousel";
+import { log } from "console";
+export const images = [
+  "https://cdn.nhathuoclongchau.com.vn/unsafe/828x0/filters:quality(90)/https://cms-prod.s3-sgn09.fptcloud.com/Banner_Web_PC_1610x492_copy_6e3d2e1e98.png",
+  "https://cdn.nhathuoclongchau.com.vn/unsafe/828x0/filters:quality(90)/https://cms-prod.s3-sgn09.fptcloud.com/Banner_Web_PC_1610x492_c3d64ac3db.png",
+  "https://cdn.nhathuoclongchau.com.vn/unsafe/828x0/filters:quality(90)/https://cms-prod.s3-sgn09.fptcloud.com/20240718_Giao_hang_tan_noi_1610x492_bd84ee655b.jpg",
+  "https://cdn.nhathuoclongchau.com.vn/unsafe/828x0/filters:quality(90)/https://cms-prod.s3-sgn09.fptcloud.com/Vacxin_Goinhiva6trong1_homepageweb_PC_9ea8f21c06.jpg",
+  "https://cdn.nhathuoclongchau.com.vn/unsafe/828x0/filters:quality(90)/https://cms-prod.s3-sgn09.fptcloud.com/1610x492_web_PC_7a9dadf0c9.png",
+];
+export default async function Home() {
+  const homeData = await fetch("https://api.ludmila.vn/api/v1/home");
+  const homeJson = await homeData.json();
 
-export default function Home() {
+  const productsJson = await fetch("https://api.ludmila.vn/api/v1/products");
+  const productsData = await productsJson.json();
+  const products = productsData.items;
+  const topNewProduct = homeJson.topNewestProducts
+    .slice(0, 5)
+    .map((product: any, index: number) => ({
+      ...product,
+      image: images[index],
+    }));
+  const productMapped = products.map((product: any) => ({
+    ...product,
+    image: convertImagePathToUrl(product.image, 250),
+  }));
   return (
     <div className="md:min-w-container-content lg:w-full flex flex-col min-h-screen">
       <div className="flex items-center border border-t-gray-2 border-b-gray-2 bg-white px-3 py-2 md:hidden">
@@ -116,7 +142,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="h-[28px] rounded-[50px] py-1 px-2 text-label2 text-white bgi-button-primary-active">
+        <div className="h-[28px] rounded-[50px] py-1 px-2 text-label2 text-white bgi-button-primary-active ">
           <a href="https://dl.ntlc.com.vn/app/home">MỞ ỨNG DỤNG</a>
         </div>
       </div>
@@ -126,9 +152,17 @@ export default function Home() {
         <MenuCategory></MenuCategory>
         <div id="overlay-menu"></div>
       </div>
+      <CarouselDemo products={topNewProduct}></CarouselDemo>
+      <HomePage products={productMapped}></HomePage>
+      <div className="grid grid-cols-6 gap-4">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>09</div>
+      </div>
       <div className="h-[400px]">f</div>
       <div className="h-[400px]">f</div>
-      <div className="h-[400px]">f</div>
+
       <Footer></Footer>
     </div>
   );
